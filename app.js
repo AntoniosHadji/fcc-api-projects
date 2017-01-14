@@ -51,7 +51,7 @@ app.set('port', (process.env.PORT || '3000'));
 /**
  * Create HTTP server.
  */
-var debug = require('debug')('fcc-file-meta-ah:server');
+var debug = require('debug')('http');
 var http = require('http');
 var server = http.createServer(app);
 /**
@@ -69,3 +69,5 @@ function onError(error) {
 function onListen() {
   debug('listening on ' + app.get('port'));
 }
+
+module.exports = app;

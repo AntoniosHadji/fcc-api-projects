@@ -5,8 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./routes/index.js');
 
 var app = express();
 
@@ -14,8 +13,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// add this line to register partial directory in handlebars
+require('hbs').registerPartials(path.join(__dirname, 'views', 'partial'));
+
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,4 +44,28 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+// Get port from environment and store in Express.
+app.set('port', (process.env.PORT || '3000'));
+
+/**
+ * Create HTTP server.
+ */
+var debug = require('debug')('fcc-file-meta-ah:server');
+var http = require('http');
+var server = http.createServer(app);
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(app.get('port'));
+server.on('listening', onListen);
+server.on('error', onError);
+
+function onError(error) {
+  console.error(error);
+}
+
+function onListen() {
+  debug('listening on ' + app.get('port'));
+}

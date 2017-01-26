@@ -1,5 +1,5 @@
 {
-  "name": "fcc-file-meta-ah",
+  "name": "fcc-api-projects",
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js",

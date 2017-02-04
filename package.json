@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js",
-    "debug": "DEBUG=* node app.js"
+    "debug": "DEBUG=* node app.js",
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "dependencies": {
     "body-parser": "~1.15.2",

@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<form method="post" enctype="multipart/form-data"
+  action="/file-metadata/get-meta">
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile" name="testfile">
+    <p class="help-block">Select a file to get the size in JSON.</p>
+  </div>
+  <button type="submit" class="btn btn-default">Get Meta Data</button>
+</form>

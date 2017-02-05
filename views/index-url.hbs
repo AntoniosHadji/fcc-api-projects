@@ -1,0 +1,39 @@
+<h1>{{ title }}</h1>
+<div class="apiendpoint" id="v3_shorten">
+
+  <h2>/v1</h2>
+  <p>Given a long URL, returns a short link.</p>
+  <h3>Parameters</h3>
+  <ul>
+    <li>longUrl - a long URL to be shortened (example: <code>http://betaworks.com/</code>).</li>
+  </ul>
+  <h3>Notes</h3>
+  <ul>
+    <li>Long URLs should be <a href="http://en.wikipedia.org/wiki/Percent-encoding">URL-encoded</a>.
+      You can not include a longUrl in the request that has <code>&amp;</code>, <code>?</code>, <code>#</code>,
+      or other reserved parameters without first encoding it.</li>
+    <li>Long URLs should not contain spaces: any longUrl with spaces will be rejected.
+      All spaces should be either percent encoded <code>%20</code> or plus encoded <code>+</code>. Note that tabs,
+      newlines and trailing spaces are all indications of errors. Please remember to strip leading and
+      trailing whitespace from any user input before shortening.</li>
+  </ul>
+  <h3>Return Values</h3>
+  <ul>
+    <li>shortUrl - the actual short link that should be used, and is a unique value.</li>
+    <li>longUrl - an echo back of the longUrl request parameter.</li>
+    <li>status - server status response
+  </ul>
+  <h3>Example Request</h3>
+  <pre class="example">
+          API Address: {{ hostname }}
+          GET /v1?longUrl=https://www.google.com
+  </pre>
+
+  <pre class="prettyprint lang-js">
+        <span class="pun">{</span><span class="pln"></span>
+        <span class="str">"shortUrl"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"ze6poY"</span><span class="pun">,</span><span class="pln"></span>
+        <span class="str">"long_url"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"http://google.com/"</span><span class="pun">,</span><span class="pln"></span>
+        <span class="str">"status"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200</span><span class="pun">,</span><span class="pln"></span>
+        <span class="pun">}</span>
+  </pre>
+</div>

@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "debug": "DEBUG=* node app.js",
-    "test": "./node_modules/jasmine/bin/jasmine.js"
+    "debug": "DEBUG=* node app.js"
   },
  "repository" :
   { "type" : "git",
@@ -21,8 +20,5 @@
     "morgan": "~1.7.0",
     "multer": "1.3.0",
     "serve-favicon": "~2.3.0"
-  },
-  "devDependencies": {
-    "jasmine": "2.5.3"
   }
 }

@@ -37,7 +37,7 @@ router.post('/file-metadata/get-meta', upload.single('testfile'),
 /* header parser */
 router.get('/header-parser', (req, res, next) => {
   let d = extractHeaderData(req);
-  d.title = 'FCC Request Header Parser on Express';
+  d.title = 'FCC Request Header Parser';
   d.url = '//' + req.get('host');
   res.render('index-headerparser', d);
 });
@@ -54,6 +54,7 @@ router.get('/timestamp', (req, res) => {
     url2: '//'+req.get('Host')+'/timestamp/'+Math.floor(d.getTime()/1000),
     unix: Math.floor(d.getTime()/1000),
     natural: d.toDateString(),
+    title: 'FCC Timestamp Microservice',
   });
 });
 

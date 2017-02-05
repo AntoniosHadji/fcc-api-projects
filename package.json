@@ -1,6 +1,6 @@
 {
   "name": "fcc-api-projects",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Back End Javascript projects for Free Code Camp",
   "license": "MIT",
   "scripts": {

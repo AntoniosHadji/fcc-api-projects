@@ -1,11 +1,7 @@
 <h1>{{ title }}</h1>
 <p>Welcome to {{title}}</p>
 
-<div class="row">
-  <div class="col">
-    <hr>
-  </div>
-</div>
+<hr>
 
 <div class="row">
   <div class="col">
@@ -33,24 +29,22 @@
         <li>status - server status response
       </ul>
       <h3>Example Request</h3>
-      <pre class="example">
+      <pre>
+      <code class="example">
           API Address: {{ hostname }}
-          GET {{hostname}}/v1?longUrl=https://www.google.com
-      </pre>
-      <pre class="prettyprint lang-js">
+          GET {{hostname}}/url-short/v1?longUrl=https://www.google.com
+      </code>
+      <code class="prettyprint lang-js">
         {
         "shortUrl": "6g5x5",
         "long_url": "http://google.com/",
         "status": 200,
         }
+      </code>
       </pre>
-      <a href="/url-short/v1/6g5x5">//url-short/v1/6g5x5</a>
+      <a href="/url-short/v1/6g5x5">{{hostname}}/url-short/v1/6g5x5</a>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col">
-    <hr>
-  </div>
-</div>
+<hr>
